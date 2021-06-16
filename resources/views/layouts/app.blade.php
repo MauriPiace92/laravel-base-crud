@@ -23,6 +23,12 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{{route('comics.index')}}"> Return Home</a>
                 </li>
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{route('comics.create')}}"> Create new comic</a>
+                </li>
+
+                
                
               </ul>
             </div>

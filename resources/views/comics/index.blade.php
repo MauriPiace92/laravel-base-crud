@@ -20,7 +20,25 @@
                         <h5>{{$comic->price}} €</h5>
                         <a href="{{ route('comics.show', [ 
                             'comic'=> $comic->id
-                        ])}}" class="btn btn-primary">Vedi dettagli..</a>
+                        ])}}" class="btn btn-primary">Vedi dettagli..
+                        </a>
+
+                        <div class="card-row">
+                            <a href="{{ route('comics.edit', $comic->id) }}">Modifica Fumetto</a>
+                        </div>
+
+                        <div class="card-row">
+                            <form action="{{ route('comics.destroy', [
+                                'comic' => $comic->id
+                            ]) }} " method="post">
+                            
+                            @csrf
+                            @method('DELETE')
+                
+                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                            </form>
+                        </div>
+                
                         </div>
                     </div>
                 </div>
